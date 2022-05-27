@@ -1,0 +1,46 @@
+<!-- <h1 class="bg-primary">Bootstrap installed</h1>
+<button class="bg-danger btn">Click</button> -->
+
+  <!-- <img src="assets/Images/profile_background.jpg"> -->
+  <div class="row">
+    <div class="col-md-4 " style="background-color: #343434">
+      <app-slider [child1]="name" [child2]="email" [child3]="contact" ></app-slider>
+       </div>  
+       <br>
+  <div class="container  col-md-8 shadow-lg p-3 mb-5 bg-white rounded" style="color: white;margin-top: 30px;" >
+    <h1 style="text-align: center;color: black;">Edit Profile</h1>
+  <div class="style1 ">
+      <!-- <img src="{{onUpload}}" class="img-thumbnail" alt="..."> -->
+      <img src="../assets/images/Profile_pic.JPG" class="img-thumbnail"><br><br>
+      <input class="form-control" type="file" 
+      (change)="onChange($event)">
+      <br>
+  <button (click)="onUpload()" 
+  class="btn btn-success">
+  Upload
+  </button>
+  </div>
+  <form #profileFormVar="ngForm" (ngSubmit)="onFormSubmit(profileFormVar)">
+    <!-- <div>
+    {{ profileFormVar.value | json}}
+    </div> -->
+      <div class="style1" >
+        <label for="Name" class="form-label" style="color: black;" >Name</label>
+        <input type="name" name='name' class="form-control formClass textBox-size " id="Name"  aria-describedby="emailHelpInline"  ngModel>
+      </div>
+      <div class="style1">
+        <label for="exampleInputEmail" class="form-label" style="color: black;">Email</label>
+        <input type="email"  name='email' class="form-control textBox-size formClass" id="exampleInputEmail"  ngModel>
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="style1">
+          <label for="exampleInputContact" class="form-label" style="color: black;">Contact</label>
+          <input type="tel" name='contact' class="form-control textBox-size formClass "  id="exampleInputContact" ngModel>
+          <div id="emailHelp" class="form-text">We'll never share your contact with anyone else.</div>
+        </div>
+      <div class="style1">
+      <button type="submit" class="btn btn-success"  >Change</button>
+      </div>
+    </form>
+  </div>
+  </div>
